@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Crop Predict</title>
+</head>
+<body>
+    <div >
+
+        <h1>Crop Predict</h1>
+        <form action="/predict" method="POST">
+            <label for="Nitrogen">Nitrogen</label>
+            <input type="number" name="nitrogen" id="nitrogen" placeholder="Enter Nitrogen value" required>
+
+            <label for="Phosporous">Phosporous</label>
+            <input type="number" name="phosphorous" id="phosporous" placeholder="Enter Phosphorous value" required>
+
+            <label for="Potassium">Potassium</label>
+            <input type="number" name="potassium" id="potassium" placeholder="Enter Potassium value" required>
+
+
+            <label for="temperature">Temperature</label>
+            <input type="number" step="0.01" name="temperature" id="temperature" placeholder="Enter Temperature value" required>
+
+            <label for="humidity">Humidity</label>
+            <input type="number" step="0.01" name="humidity" id="humidity" placeholder="Enter Humidity value" required>
+
+            <label for="ph">pH</label>
+            <input type="number" step="0.01" name="ph" id="ph" placeholder="Enter pH value" required>
+
+            <label for="rainfall">Rainfall</label>
+            <input type="number" step="0.01" name="rainfall" id="rainfall" placeholder="Enter Rainfall value" required>
+                 
+             <button type="submit">Crop to Plant</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <p >{{ result }}</p>
+            </div>
+	    {% endif %}
+
+  
+    </div>
+</body>
+</html>
